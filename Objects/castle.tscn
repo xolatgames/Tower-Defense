@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccnuei60peepa"]
+
+[ext_resource type="PackedScene" uid="uid://l55boefgixrr" path="res://Models/Castle.fbx" id="1_fpf4k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvsxr"]
+
+[node name="Castle" type="Area3D" groups=["castle"]]
+
+[node name="Castle" parent="." instance=ExtResource("1_fpf4k")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_hvsxr")

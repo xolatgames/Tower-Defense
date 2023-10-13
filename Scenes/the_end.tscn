@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://craai4w6c6n23"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/the_end.gd" id="1_a4d13"]
+
+[sub_resource type="Gradient" id="Gradient_wv08x"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tx4mg"]
+gradient = SubResource("Gradient_wv08x")
+
+[node name="The End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4d13")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 608.0
+texture = SubResource("GradientTexture1D_tx4mg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 480.0
+text = "The End!
+Thanks for playing!
+
+xolatgames, with Love! ;)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 512.0
+offset_right = 992.0
+offset_bottom = 576.0
+text = "Quit"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

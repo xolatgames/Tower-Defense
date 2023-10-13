@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://co44fnjlobv2v"]
+
+[ext_resource type="Script" path="res://Scripts/Towers/slow.gd" id="1_7rfin"]
+[ext_resource type="PackedScene" uid="uid://bv23ygkt5iig0" path="res://Models/Towers/Slow.fbx" id="1_lb4tp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0392157)
+
+[sub_resource type="SphereMesh" id="SphereMesh_imuox"]
+material = SubResource("StandardMaterial3D_xgfuf")
+radius = 3.0
+height = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fkohu"]
+radius = 3.0
+
+[node name="Slow" type="Area3D"]
+script = ExtResource("1_7rfin")
+
+[node name="Slow" parent="." instance=ExtResource("1_lb4tp")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_imuox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fkohu")

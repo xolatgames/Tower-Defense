@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwtw0cts5edyv"]
+
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_p2ece"]
+[ext_resource type="PackedScene" uid="uid://cqvtpc8h7o3l8" path="res://Models/Coin.fbx" id="2_ab8co"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0dd46"]
+friction = 0.5
+bounce = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d2voq"]
+height = 0.309
+radius = 0.63
+
+[node name="Coin" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_0dd46")
+script = ExtResource("1_p2ece")
+
+[node name="Coin" parent="." instance=ExtResource("2_ab8co")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.161396, 0)
+shape = SubResource("CylinderShape3D_d2voq")
+
+[node name="Destroy" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

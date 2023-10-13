@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtv7fvwmx15sm"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/win.gd" id="1_detu5"]
+
+[node name="Win" type="Panel"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -80.0
+offset_right = 208.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_detu5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 69.0
+text = "You are the Winner!"
+horizontal_alignment = 1
+
+[node name="Next level" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 384.0
+offset_bottom = 142.0
+text = "Next level >>"
+
+[connection signal="pressed" from="Next level" to="." method="_on_next_level_pressed"]

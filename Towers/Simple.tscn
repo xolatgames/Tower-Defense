@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp5fs4gtpjcmq"]
+
+[ext_resource type="PackedScene" uid="uid://c87wj0a5v8pdm" path="res://Models/Towers/Simple.fbx" id="1_4m5eo"]
+[ext_resource type="Script" path="res://Scripts/Towers/tower.gd" id="1_f23sr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0392157)
+
+[sub_resource type="SphereMesh" id="SphereMesh_imuox"]
+material = SubResource("StandardMaterial3D_xgfuf")
+radius = 3.0
+height = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fkohu"]
+radius = 3.0
+
+[node name="Simple" type="Area3D"]
+script = ExtResource("1_f23sr")
+
+[node name="Simple" parent="." instance=ExtResource("1_4m5eo")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_imuox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fkohu")
+
+[node name="Damage" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Damage" to="." method="_on_damage_timeout"]

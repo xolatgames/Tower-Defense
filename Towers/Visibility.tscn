@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://buikr6047y5h6"]
+
+[ext_resource type="Script" path="res://Scripts/Towers/visibility.gd" id="1_feucb"]
+[ext_resource type="PackedScene" uid="uid://ditgq7i6dpsee" path="res://Models/Towers/Visibility.fbx" id="1_ji0hp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0392157)
+
+[sub_resource type="SphereMesh" id="SphereMesh_imuox"]
+material = SubResource("StandardMaterial3D_xgfuf")
+radius = 3.0
+height = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fkohu"]
+radius = 3.0
+
+[node name="Visibility" type="Area3D"]
+script = ExtResource("1_feucb")
+
+[node name="Visibllity" parent="." instance=ExtResource("1_ji0hp")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_imuox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fkohu")

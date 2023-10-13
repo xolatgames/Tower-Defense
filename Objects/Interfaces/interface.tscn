@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://vvxr2wxn75xv"]
+
+[ext_resource type="Texture2D" uid="uid://cjvcpty2a5rdc" path="res://Sprites/Bar.svg" id="1_8c4ni"]
+[ext_resource type="Texture2D" uid="uid://c4rs7bhgxit40" path="res://Sprites/Money.svg" id="1_qyaxl"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/interface.gd" id="1_vr78r"]
+[ext_resource type="Theme" uid="uid://dvaf530dfhg8y" path="res://interface.tres" id="4_kpx23"]
+[ext_resource type="Texture2D" uid="uid://ck37kaoyo5vc6" path="res://Sprites/Lives.svg" id="4_mvx11"]
+[ext_resource type="PackedScene" uid="uid://bvexqhqkwa23r" path="res://Objects/Interfaces/paused.tscn" id="6_j45lf"]
+
+[node name="Interface" type="CanvasLayer"]
+script = ExtResource("1_vr78r")
+
+[node name="Bar" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 96.0
+texture = ExtResource("1_8c4ni")
+expand_mode = 1
+
+[node name="Money Count" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 96.0
+theme = ExtResource("4_kpx23")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money Icon" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("1_qyaxl")
+expand_mode = 1
+
+[node name="Bar2" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 32.0
+offset_right = 544.0
+offset_bottom = 96.0
+texture = ExtResource("1_8c4ni")
+expand_mode = 1
+
+[node name="Lives Count" type="Label" parent="."]
+offset_left = 352.0
+offset_top = 32.0
+offset_right = 544.0
+offset_bottom = 96.0
+theme = ExtResource("4_kpx23")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lives Icon" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 96.0
+texture = ExtResource("4_mvx11")
+expand_mode = 1
+
+[node name="Paused button" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 96.0
+text = "||"
+
+[node name="Paused" parent="." instance=ExtResource("6_j45lf")]
+visible = false
+
+[connection signal="pressed" from="Paused button" to="." method="_on_pause_pressed"]

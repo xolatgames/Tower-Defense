@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Snow.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.64504648"
+     inkscape:cx="182.15742"
+     inkscape:cy="266.64745"
+     inkscape:window-width="1320"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="16.933333"
+       spacingy="16.933333"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true"
+       snapvisiblegridlinesonly="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:8.46666667;stroke-linecap:square;stroke-dasharray:none"
+       id="rect1"
+       width="135.46666"
+       height="135.46666"
+       x="0"
+       y="0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#9a9996;stroke-width:8.46667;stroke-linecap:square;stroke-dasharray:none"
+       d="m 16.933333,50.799997 c 0,0 33.866666,0 33.866666,-16.933333 l 0,2e-6 c 3.117251,16.93333 33.866667,16.93333 33.866667,16.93333"
+       id="path3"
+       sodipodi:nodetypes="ccsc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#9a9996;stroke-width:8.46667;stroke-linecap:square;stroke-dasharray:none"
+       d="m 50.800008,118.53332 c 0,0 33.866666,0 33.866666,-16.93333 v 10e-6 c 3.117251,16.93332 33.866656,16.93332 33.866656,16.93332"
+       id="path3-5"
+       sodipodi:nodetypes="ccsc" />
+  </g>
+</svg>

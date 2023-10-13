@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvmrpaylvjq0w"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_07kop"]
+[ext_resource type="PackedScene" uid="uid://kifokonm2mi0" path="res://Models/Enemies/Bird.fbx" id="2_rio1c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7mvhy"]
+
+[node name="Bird" type="Area3D"]
+script = ExtResource("1_07kop")
+is_fly = true
+
+[node name="Skin" parent="." instance=ExtResource("2_rio1c")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.175782)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0.00769764)
+shape = SubResource("CapsuleShape3D_7mvhy")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+avoidance_enabled = true
+height = 0.5
+radius = 0.25
+neighbor_distance = 1.0
+max_speed = 100.0
+
+[node name="Health" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790377, 0)
+billboard = 1
+no_depth_test = true
+text = "10/10"
+font_size = 112
+
+[node name="Speeding" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Speeding" to="." method="_on_speeding_timeout"]
