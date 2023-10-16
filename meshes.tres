@@ -1,6 +1,8 @@
-[gd_resource type="MeshLibrary" load_steps=7 format=3 uid="uid://cac2ibdoao68j"]
+[gd_resource type="MeshLibrary" load_steps=13 format=3 uid="uid://cac2ibdoao68j"]
 
 [ext_resource type="Texture2D" uid="uid://oi5ibjxx3fsu" path="res://Textures/Grass.svg" id="1_a3vw8"]
+[ext_resource type="Texture2D" uid="uid://6to74h4duddx" path="res://Textures/Snow.svg" id="2_yc70w"]
+[ext_resource type="Texture2D" uid="uid://c7lw62pjqhyuv" path="res://Textures/Graveyard.svg" id="3_j72o7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajhux"]
 albedo_color = Color(0.5, 0.5, 0.5, 1)
@@ -17,6 +19,20 @@ material = SubResource("StandardMaterial3D_y4qxg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4fuq1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n66f5"]
+albedo_texture = ExtResource("2_yc70w")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ob2fw"]
+material = SubResource("StandardMaterial3D_n66f5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j34t"]
+albedo_texture = ExtResource("3_j72o7")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rcxb"]
+material = SubResource("StandardMaterial3D_1j34t")
+
 [resource]
 item/0/name = "Road"
 item/0/mesh = SubResource("BoxMesh_ruwq8")
@@ -30,3 +46,15 @@ item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/shapes = [SubResource("BoxShape3D_4fuq1"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
+item/2/name = "Snow"
+item/2/mesh = SubResource("BoxMesh_ob2fw")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/shapes = []
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "Graveyard"
+item/3/mesh = SubResource("BoxMesh_6rcxb")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/shapes = []
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1

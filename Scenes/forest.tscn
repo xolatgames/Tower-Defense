@@ -1,23 +1,66 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1u5ssgrwch8o"]
+[gd_scene load_steps=12 format=3 uid="uid://d1u5ssgrwch8o"]
 
 [ext_resource type="PackedScene" uid="uid://vvxr2wxn75xv" path="res://Objects/Interfaces/interface.tscn" id="1_6c6fn"]
 [ext_resource type="Script" path="res://Scripts/level_controller.gd" id="1_pyeqv"]
+[ext_resource type="PackedScene" uid="uid://bly8lmq07341u" path="res://Objects/hint.tscn" id="2_0bas8"]
 [ext_resource type="MeshLibrary" uid="uid://cac2ibdoao68j" path="res://meshes.tres" id="2_1u0g2"]
 [ext_resource type="PackedScene" uid="uid://bvbogn4gq2jcl" path="res://Objects/building_button.tscn" id="2_iupqe"]
+[ext_resource type="PackedScene" uid="uid://fxm2qkxc1o50" path="res://Objects/tower_icon.tscn" id="3_dmkuh"]
 [ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Entities/build_place.tscn" id="3_swph4"]
 [ext_resource type="PackedScene" uid="uid://h2ybmnfnbk4r" path="res://Objects/Interfaces/lose.tscn" id="4_m4ilo"]
 [ext_resource type="PackedScene" uid="uid://dtv7fvwmx15sm" path="res://Objects/Interfaces/win.tscn" id="5_iqjvi"]
 [ext_resource type="PackedScene" uid="uid://ccnuei60peepa" path="res://Objects/castle.tscn" id="6_8r3bv"]
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_4c85s"]
-vertices = PackedVector3Array(-4.75, 2.5, -5, -4.75, 2.5, -3.25, -3.25, 2.5, -3.25, -3, 2.5, -5.25, 0, 2.5, -6.75, -3, 2.5, -5.25, 1, 2.5, -5.25, 1, 2.5, -5.25, 1.25, 2.5, -3.25, 2.75, 2.5, -3.25, 3, 2.5, -5.25, 0, 2.5, -6.75, 1, 2.5, -5.25, 3, 2.5, -5.25, -7.75, 2.5, -6.75, -7.75, 2.5, -5.25, -4.75, 2.5, -5, -3, 2.5, -5.25, 0, 2.5, -6.75, 7.75, 2.5, -6.75, 0, 2.5, -6.75, 3, 2.5, -5.25, 7, 2.5, -5.25, 7.75, 2.5, 0, 7.75, 2.5, -6.75, 7, 2.5, -5.25, 7.25, 2.5, 0, -5.25, 1.5, -4.5, -7.75, 1.5, -4.5, -5.75, 1.5, -4.25, -6, 1.5, 4.5, -7.75, 1.5, 4.75, -5.25, 1.5, 4.75, -5.5, 1.5, 4, -6, 1.5, 4.5, -5.25, 1.5, 4.75, -5.5, 1.5, 4, -5.25, 1.5, 4.75, -5, 1.5, 2.75, -5.5, 1.5, 2.5, 6.5, 1.5, 4, 6, 1.5, 4.5, 6.75, 1.5, 4.75, -5, 1.5, -2.5, -5.25, 1.5, -4.5, -5.75, 1.5, -4.25, -5.5, 1.5, -2.25, 0.25, 1.5, -4.25, 0.5, 1.5, -2.25, 1, 1.5, -2.5, 0.75, 1.5, -4.5, -3, 1.5, -2.5, -5, 1.5, -2.5, -5.5, 1.5, -2.25, -2.25, 1.5, -2.25, 3.5, 1.5, -3, 3.75, 1.5, -2.25, 4, 1.5, -4.25, 3.5, 1.5, -4.5, -2.5, 1.5, -3, -3, 1.5, -2.5, -2.25, 1.5, -2.25, -2.5, 1.5, -3, -2.25, 1.5, -2.25, -2, 1.5, -4.25, -2.5, 1.5, -4.5, 6, 1.5, 4.5, 4, 1.5, 4.5, 3.5, 1.5, 4.75, 6.75, 1.5, 4.75, -2.25, 1.5, 2.5, -5.5, 1.5, 2.5, -5, 1.5, 2.75, -2.75, 1.5, 2.75, 6.5, 1.5, 4, 6.75, 1.5, 4.75, 6.75, 1.5, -4.5, 6.5, 1.5, -4, -2, 1.5, 4.5, -2.25, 1.5, 2.5, -2.75, 1.5, 2.75, -2.5, 1.5, 4.75, 0.5, 1.5, -2.25, 3.75, 1.5, -2.25, 3, 1.5, -2.5, 1, 1.5, -2.5, 0, 1.5, 4.5, -2, 1.5, 4.5, -2.5, 1.5, 4.75, 0.75, 1.5, 4.75, 3.5, 1.5, -3, 3, 1.5, -2.5, 3.75, 1.5, -2.25, 0.5, 1.5, 4, 0, 1.5, 4.5, 0.75, 1.5, 4.75, 0.5, 1.5, 4, 0.75, 1.5, 4.75, 1, 1.5, 2.75, 0.5, 1.5, 2.5, 0.75, 1.5, -4.5, -2.5, 1.5, -4.5, -2, 1.5, -4.25, 0.25, 1.5, -4.25, 3.75, 1.5, 2.5, 0.5, 1.5, 2.5, 1, 1.5, 2.75, 3.25, 1.5, 2.75, 4, 1.5, -4.25, 6.5, 1.5, -4, 6.75, 1.5, -4.5, 3.5, 1.5, -4.5, 4, 1.5, 4.5, 3.75, 1.5, 2.5, 3.25, 1.5, 2.75, 3.5, 1.5, 4.75, -6, 2.5, 1.75, -6, 2.5, -1.75, -6.25, 2.5, -3.75, -7.75, 2.5, -3.75, -7.75, 2.5, 3.75, -6.25, 2.5, 3.75, -2.25, 2.5, 1.75, -2.25, 2.5, -1.75, -6, 2.5, -1.75, -6, 2.5, 1.75, -1.75, 2.5, 2, -1.75, 2.5, 3.75, -0.25, 2.5, 3.75, 0, 2.5, 1.75, -2.25, 2.5, -1.75, -2.25, 2.5, 1.75, -1.75, 2.5, 2, 0, 2.5, 1.75, 0, 2.5, -1.75, -1.75, 2.5, -2, 4, 2.5, -1.75, 4, 2.5, 1.75, 4.25, 2.5, 3.75, 5.75, 2.5, 3.75, 5.75, 2.5, -3.75, 4.25, 2.5, -3.75, -0.25, 2.5, -3.75, -1.75, 2.5, -3.75, -1.75, 2.5, -2, 0, 2.5, -1.75, 4, 2.5, -1.75, 0, 2.5, -1.75, 0, 2.5, 1.75, 4, 2.5, 1.75, -3.25, 2.5, 3.25, -4.75, 2.5, 3.25, -4.75, 2.5, 5, -3, 2.5, 5.25, 1, 2.5, 5.25, -3, 2.5, 5.25, 0, 2.5, 6.75, 3, 2.5, 5.25, 2.75, 2.5, 3.25, 1.25, 2.5, 3.25, 1, 2.5, 5.25, 3, 2.5, 5.25, 1, 2.5, 5.25, 0, 2.5, 6.75, -4.75, 2.5, 5, -7.75, 2.5, 5.25, -7.75, 2.5, 6.75, 0, 2.5, 6.75, -3, 2.5, 5.25, 3, 2.5, 5.25, 0, 2.5, 6.75, 7.75, 2.5, 6.75, 7, 2.5, 5.25, 7.75, 2.5, 0, 7.25, 2.5, 0, 7, 2.5, 5.25, 7.75, 2.5, 6.75)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(13, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(26, 25, 23), PackedInt32Array(23, 25, 24), PackedInt32Array(29, 28, 27), PackedInt32Array(32, 31, 30), PackedInt32Array(35, 34, 33), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(42, 41, 40), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(50, 49, 47), PackedInt32Array(47, 49, 48), PackedInt32Array(52, 51, 53), PackedInt32Array(53, 51, 54), PackedInt32Array(58, 57, 55), PackedInt32Array(55, 57, 56), PackedInt32Array(61, 60, 59), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(73, 72, 70), PackedInt32Array(70, 72, 71), PackedInt32Array(77, 76, 74), PackedInt32Array(74, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(85, 84, 82), PackedInt32Array(82, 84, 83), PackedInt32Array(87, 86, 88), PackedInt32Array(88, 86, 89), PackedInt32Array(92, 91, 90), PackedInt32Array(95, 94, 93), PackedInt32Array(99, 98, 96), PackedInt32Array(96, 98, 97), PackedInt32Array(103, 102, 100), PackedInt32Array(100, 102, 101), PackedInt32Array(107, 106, 104), PackedInt32Array(104, 106, 105), PackedInt32Array(109, 108, 110), PackedInt32Array(110, 108, 111), PackedInt32Array(115, 114, 112), PackedInt32Array(112, 114, 113), PackedInt32Array(121, 120, 116), PackedInt32Array(116, 120, 117), PackedInt32Array(117, 120, 118), PackedInt32Array(118, 120, 119), PackedInt32Array(125, 124, 122), PackedInt32Array(122, 124, 123), PackedInt32Array(127, 126, 128), PackedInt32Array(128, 126, 129), PackedInt32Array(135, 134, 130), PackedInt32Array(130, 134, 133), PackedInt32Array(130, 133, 132), PackedInt32Array(130, 132, 131), PackedInt32Array(141, 140, 136), PackedInt32Array(136, 140, 137), PackedInt32Array(137, 140, 138), PackedInt32Array(138, 140, 139), PackedInt32Array(143, 142, 144), PackedInt32Array(144, 142, 145), PackedInt32Array(149, 148, 146), PackedInt32Array(146, 148, 147), PackedInt32Array(151, 150, 152), PackedInt32Array(152, 150, 153), PackedInt32Array(156, 155, 154), PackedInt32Array(158, 157, 159), PackedInt32Array(159, 157, 160), PackedInt32Array(163, 162, 161), PackedInt32Array(165, 164, 166), PackedInt32Array(166, 164, 168), PackedInt32Array(166, 168, 167), PackedInt32Array(172, 171, 169), PackedInt32Array(169, 171, 170), PackedInt32Array(174, 173, 175), PackedInt32Array(175, 173, 176)]
-agent_radius = 0.2
+[ext_resource type="NavigationMesh" uid="uid://bvxyk401tp68e" path="res://navmesh.tres" id="6_cgb0t"]
 
 [node name="Forest" type="Node3D"]
 script = ExtResource("1_pyeqv")
-enemy_name = Array[int]([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-enemy_health = Array[int]([0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 0, 0, 0, 0, 5, 5, 5, 10, 10])
+enemy_name = Array[int]([0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+enemy_health = Array[int]([0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 0, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20])
+
+[node name="Hint" parent="." instance=ExtResource("2_0bas8")]
+
+[node name="Label" type="Label" parent="Hint"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 154.0
+offset_right = 960.0
+offset_bottom = 228.0
+text = "Drag&Drop towers for building! The price of the tower will be show below the icon."
+autowrap_mode = 2
+
+[node name="House" type="Label" parent="Hint"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 252.0
+offset_right = 960.0
+offset_bottom = 289.0
+text = "Build houses for earn a money"
+autowrap_mode = 2
+
+[node name="Simple" type="Label" parent="Hint"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 864.0
+offset_bottom = 426.0
+text = "Build simple towers for defense the castle. If all lives will be lost, you lose!"
+autowrap_mode = 2
+
+[node name="House icon" parent="Hint" instance=ExtResource("3_dmkuh")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 252.0
+offset_right = 128.0
+offset_bottom = 316.0
+tower_name = "House"
+
+[node name="Simple icon" parent="Hint" instance=ExtResource("3_dmkuh")]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 360.0
+offset_right = 960.0
+offset_bottom = 424.0
+tower_name = "Simple"
 
 [node name="Interface" parent="." instance=ExtResource("1_6c6fn")]
 
@@ -42,13 +85,13 @@ visible = false
 
 [node name="Win" parent="." instance=ExtResource("5_iqjvi")]
 visible = false
-next_level = "the_end"
+next_level = "night"
 
 [node name="Start enemy position" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, -4.5)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_4c85s")
+navigation_mesh = ExtResource("6_cgb0t")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
 mesh_library = ExtResource("2_1u0g2")

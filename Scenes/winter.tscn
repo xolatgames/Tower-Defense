@@ -1,0 +1,208 @@
+[gd_scene load_steps=12 format=3 uid="uid://dl24qrync82kg"]
+
+[ext_resource type="Script" path="res://Scripts/level_controller.gd" id="1_c24l3"]
+[ext_resource type="PackedScene" uid="uid://vvxr2wxn75xv" path="res://Objects/Interfaces/interface.tscn" id="2_4r873"]
+[ext_resource type="PackedScene" uid="uid://bly8lmq07341u" path="res://Objects/hint.tscn" id="2_7bjsw"]
+[ext_resource type="PackedScene" uid="uid://h2ybmnfnbk4r" path="res://Objects/Interfaces/lose.tscn" id="3_6oi86"]
+[ext_resource type="PackedScene" uid="uid://fxm2qkxc1o50" path="res://Objects/tower_icon.tscn" id="3_ckuu5"]
+[ext_resource type="PackedScene" uid="uid://bvbogn4gq2jcl" path="res://Objects/building_button.tscn" id="3_tnf8v"]
+[ext_resource type="PackedScene" uid="uid://dtv7fvwmx15sm" path="res://Objects/Interfaces/win.tscn" id="4_cbp33"]
+[ext_resource type="MeshLibrary" uid="uid://cac2ibdoao68j" path="res://meshes.tres" id="5_wxa5m"]
+[ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Entities/build_place.tscn" id="6_u6pue"]
+[ext_resource type="PackedScene" uid="uid://ccnuei60peepa" path="res://Objects/castle.tscn" id="7_1tnbw"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_36qxb"]
+vertices = PackedVector3Array(0.25, 2.5, 0.25, 0.25, 2.5, 0.75, 2.25, 2.5, 1, 2.75, 2.5, 0.25, 4.75, 2.5, 4.75, 4.75, 2.5, -1.75, 4.25, 2.5, -1, 4, 2.5, 4.25, 2.75, 2.5, 2.75, 2.75, 2.5, 0.25, 2.25, 2.5, 1, 2, 2.5, 2.25, -3.75, 2.5, 4.75, -3, 2.5, 4.25, -3.25, 2.5, -3, -3.75, 2.5, -3.75, -1.75, 2.5, 2.75, 2.75, 2.5, 2.75, 2, 2.5, 2.25, -1.25, 2.5, 2, -3.75, 2.5, 4.75, 4.75, 2.5, 4.75, 4, 2.5, 4.25, -3, 2.5, 4.25, -1.75, 2.5, -1.75, -1.75, 2.5, 2.75, -1.25, 2.5, 2, -1, 2.5, -1.25, -3.25, 2.5, -3, 4.75, 2.5, -3, 4.75, 2.5, -3.75, -3.75, 2.5, -3.75, 4.75, 2.5, -1.75, -1.75, 2.5, -1.75, -1, 2.5, -1.25, 4.25, 2.5, -1, -0.5, 1.5, 1.75, 1.75, 1.5, 1.75, -0.25, 1.5, 1.25, -2, 1.5, -2.25, 4.75, 1.5, -2.25, -2.5, 1.5, -2.5, -0.5, 1.5, -0.5, -0.5, 1.5, 1.75, -0.25, 1.5, 1.25, 0, 1.5, -0.25, 3.75, 1.5, 3.75, 3.5, 1.5, 3, 3, 1.5, 3.5, 3.75, 1.5, -0.5, -0.5, 1.5, -0.5, 0, 1.5, -0.25, 3.5, 1.5, 0, -2.5, 1.5, -2.5, -2.5, 1.5, 3.75, -2.25, 1.5, 3.25, -2, 1.5, -2.25, 3.75, 1.5, -0.5, 3.5, 1.5, 0, 3.5, 1.5, 3, 3.75, 1.5, 3.75, -2.5, 1.5, 3.75, 3.75, 1.5, 3.75, 3, 1.5, 3.5, -2.25, 1.5, 3.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(38, 37, 36), PackedInt32Array(41, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(48, 47, 46), PackedInt32Array(52, 51, 49), PackedInt32Array(49, 51, 50), PackedInt32Array(56, 55, 53), PackedInt32Array(53, 55, 54), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(64, 63, 61), PackedInt32Array(61, 63, 62)]
+agent_radius = 0.2
+
+[node name="Winter" type="Node3D"]
+script = ExtResource("1_c24l3")
+
+[node name="Hint" parent="." instance=ExtResource("2_7bjsw")]
+
+[node name="Slow" type="Label" parent="Hint"]
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 672.0
+offset_bottom = 197.0
+text = "This tower will be slow down other enemies"
+autowrap_mode = 2
+
+[node name="Slow icon" parent="Hint" instance=ExtResource("3_ckuu5")]
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 224.0
+tower_name = "Slow"
+
+[node name="Interface" parent="." instance=ExtResource("2_4r873")]
+
+[node name="Building button" parent="Interface" instance=ExtResource("3_tnf8v")]
+offset_left = 32.0
+offset_top = 512.0
+offset_right = 96.0
+offset_bottom = 576.0
+tower_name = "Simple"
+price = 3
+
+[node name="Building button2" parent="Interface" instance=ExtResource("3_tnf8v")]
+offset_left = 128.0
+offset_top = 512.0
+offset_right = 192.0
+offset_bottom = 576.0
+tower_name = "House"
+price = 3
+
+[node name="Building button3" parent="Interface" instance=ExtResource("3_tnf8v")]
+offset_left = 224.0
+offset_top = 512.0
+offset_right = 288.0
+offset_bottom = 576.0
+tower_name = "Cannon"
+price = 3
+
+[node name="Building button4" parent="Interface" instance=ExtResource("3_tnf8v")]
+offset_left = 320.0
+offset_top = 512.0
+offset_right = 384.0
+offset_bottom = 576.0
+tower_name = "Bow"
+price = 3
+
+[node name="Building button5" parent="Interface" instance=ExtResource("3_tnf8v")]
+offset_left = 416.0
+offset_top = 512.0
+offset_right = 480.0
+offset_bottom = 576.0
+tower_name = "Slow"
+price = 6
+
+[node name="Lose" parent="." instance=ExtResource("3_6oi86")]
+visible = false
+
+[node name="Win" parent="." instance=ExtResource("4_cbp33")]
+visible = false
+next_level = "graveyard"
+
+[node name="Start enemy position" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1, -2.5)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_36qxb")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
+mesh_library = ExtResource("5_wxa5m")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65533, 65533, 131072, 65533, 65534, 131072, 65533, 65535, 131072, 65533, 0, 131072, 65533, 1, 131072, 65533, 2, 131072, 65534, 65533, 131072, 65534, 65534, 131072, 65534, 65535, 131072, 65534, 0, 131072, 65534, 1, 131072, 65534, 2, 131072, 65535, 65533, 131072, 65535, 65534, 131072, 65535, 65535, 131072, 65535, 0, 131072, 65535, 1, 131072, 65535, 2, 131072, 0, 65533, 131072, 0, 65534, 131072, 0, 65535, 131072, 0, 0, 131072, 0, 1, 131072, 0, 2, 131072, 1, 65533, 131072, 1, 65534, 131072, 1, 65535, 131072, 1, 0, 131072, 1, 1, 131072, 1, 2, 131072, 2, 65533, 131072, 2, 65534, 131072, 2, 65535, 131072, 2, 0, 131072, 2, 1, 131072, 2, 2, 131072, 65532, 65532, 131072, 65532, 65533, 131072, 65532, 65534, 131072, 65532, 65535, 131072, 65532, 0, 131072, 65532, 1, 131072, 65532, 2, 131072, 65532, 3, 131072, 65533, 65532, 131072, 65533, 3, 131072, 65534, 65532, 131072, 65534, 3, 131072, 65535, 65532, 131072, 65535, 3, 131072, 0, 65532, 131072, 0, 3, 131072, 1, 65532, 131072, 1, 3, 131072, 2, 65532, 131072, 2, 3, 131072, 3, 65532, 131072, 3, 65533, 131072, 3, 65534, 131072, 3, 65535, 131072, 3, 0, 131072, 3, 1, 131072, 3, 2, 131072, 3, 3, 131072, 65539, 65532, 131074, 65538, 65532, 131074, 65537, 65532, 131074, 65536, 65532, 131074, 131071, 65532, 131074, 131070, 65532, 131074, 131069, 65532, 131074, 131068, 65532, 131074, 131068, 65533, 131074, 131068, 65534, 131074, 131068, 65535, 131074, 131068, 0, 131074, 131068, 1, 131074, 131068, 2, 131074, 131068, 3, 131074, 131068, 4, 131074, 131069, 4, 131074, 131070, 4, 131074, 131071, 4, 131074, 65536, 4, 131074, 65537, 4, 131074, 65538, 4, 131074, 65539, 4, 131074, 65540, 4, 131074, 65540, 3, 131074, 65540, 65535, 131074, 65540, 2, 131074, 65540, 1, 131074, 65540, 0, 131074, 65540, 65532, 131074, 65540, 65534, 131074, 65539, 65534, 131074, 65538, 65534, 131074, 65537, 65534, 131074, 65536, 65534, 131074, 131071, 65534, 131074, 131070, 65534, 131074, 131070, 65535, 131074, 131070, 0, 131074, 131070, 1, 131074, 131070, 2, 131074, 131071, 2, 131074, 65536, 2, 131074, 65537, 2, 131074, 65538, 2, 131074, 65538, 1, 131074, 65538, 0, 131074, 65537, 0, 131074, 65536, 0, 131074, 4, 65533, 131072, 65532, 4, 131072, 65533, 4, 131072, 65534, 4, 131072, 65535, 4, 131072, 0, 4, 131072, 1, 4, 131072, 2, 4, 131072, 3, 4, 131072, 4, 65532, 131072, 4, 65534, 131072, 4, 65535, 131072, 4, 0, 131072, 4, 1, 131072, 4, 2, 131072, 4, 3, 131072, 4, 4, 131072)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Build places" type="Node3D" parent="."]
+
+[node name="Build place" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
+
+[node name="Build place2" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
+
+[node name="Build place3" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="Build place4" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="Build place5" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="Build place6" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
+
+[node name="Build place7" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+
+[node name="Build place8" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4.5)
+
+[node name="Build place9" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.5)
+
+[node name="Build place10" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
+
+[node name="Build place11" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3.5)
+
+[node name="Build place12" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
+
+[node name="Build place13" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -3.5)
+
+[node name="Build place14" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3.5)
+
+[node name="Build place15" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -2)
+
+[node name="Build place16" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="Build place17" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
+
+[node name="Build place18" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3)
+
+[node name="Build place19" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.5)
+
+[node name="Build place20" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="Build place21" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+
+[node name="Build place22" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="Build place23" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4.5)
+
+[node name="Build place24" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="Build place25" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+
+[node name="Build place26" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4.5)
+
+[node name="Build place27" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
+
+[node name="Build place28" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3)
+
+[node name="Build place29" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
+
+[node name="Build place30" parent="Build places" instance=ExtResource("6_u6pue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 11, 3.5)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
+
+[node name="Castle" parent="." instance=ExtResource("7_1tnbw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
+
+[node name="Spawning enemies" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Spawning enemies" to="." method="_on_spawning_enemies_timeout"]

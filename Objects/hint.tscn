@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bly8lmq07341u"]
+
+[ext_resource type="Script" path="res://Scripts/hint.gd" id="1_3igbv"]
+
+[node name="Hint" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3igbv")
+
+[node name="I Get!" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 512.0
+offset_right = 992.0
+offset_bottom = 576.0
+text = "I Get!"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 992.0
+offset_bottom = 480.0
+
+[connection signal="pressed" from="I Get!" to="." method="_on_i_get_pressed"]
