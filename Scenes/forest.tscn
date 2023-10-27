@@ -14,8 +14,8 @@
 
 [node name="Forest" type="Node3D"]
 script = ExtResource("1_pyeqv")
-enemy_name = Array[int]([0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-enemy_health = Array[int]([0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 0, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20])
+enemy_name = Array[int]([0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+enemy_health = Array[int]([0, 10, 10, 10, 0, 20, 20, 20, 0, 30, 30, 30, 0, 35, 35, 35, 0, 40, 40, 40])
 
 [node name="Hint" parent="." instance=ExtResource("2_0bas8")]
 
@@ -25,7 +25,7 @@ offset_left = 64.0
 offset_top = 154.0
 offset_right = 960.0
 offset_bottom = 228.0
-text = "Drag&Drop towers for building! The price of the tower will be show below the icon."
+text = "Drag&Drop towers for building! The price of the tower will be showed in the corner."
 autowrap_mode = 2
 
 [node name="House" type="Label" parent="Hint"]
@@ -34,7 +34,7 @@ offset_left = 160.0
 offset_top = 252.0
 offset_right = 960.0
 offset_bottom = 289.0
-text = "Build houses for earn a money"
+text = "Building houses for earingn coins"
 autowrap_mode = 2
 
 [node name="Simple" type="Label" parent="Hint"]
@@ -43,7 +43,7 @@ offset_left = 64.0
 offset_top = 352.0
 offset_right = 864.0
 offset_bottom = 426.0
-text = "Build simple towers for defense the castle. If all lives will be lost, you lose!"
+text = "Build simple towers for defensing the castle. If all lives will be lost, you will lost!"
 autowrap_mode = 2
 
 [node name="House icon" parent="Hint" instance=ExtResource("3_dmkuh")]
@@ -160,7 +160,7 @@ light_color = Color(0.75, 0.75, 0.75, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 4.5)
 
 [node name="Spawning enemies" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Spawning enemies" to="." method="_on_spawning_enemies_timeout"]

@@ -17,7 +17,7 @@ radius = 3.0
 
 [node name="Bow" type="Area3D"]
 script = ExtResource("1_6cicm")
-damage = 2
+damage = 3
 type = 2
 
 [node name="Bow" parent="." instance=ExtResource("1_i226k")]
@@ -29,7 +29,7 @@ mesh = SubResource("SphereMesh_imuox")
 shape = SubResource("SphereShape3D_fkohu")
 
 [node name="Damage" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Damage" to="." method="_on_damage_timeout"]

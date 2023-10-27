@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://craai4w6c6n23"]
+[gd_scene load_steps=9 format=3 uid="uid://craai4w6c6n23"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/the_end.gd" id="1_a4d13"]
+[ext_resource type="PackedScene" uid="uid://diyiaua8v7p6i" path="res://Models/Enemies/Orc.fbx" id="2_7sgic"]
+[ext_resource type="PackedScene" uid="uid://kifokonm2mi0" path="res://Models/Enemies/Bird.fbx" id="3_y7tck"]
+[ext_resource type="Script" path="res://Scripts/animate.gd" id="4_g6knj"]
+[ext_resource type="PackedScene" uid="uid://ditgq7i6dpsee" path="res://Models/Towers/Slow.fbx" id="4_sgfqd"]
 
 [sub_resource type="Gradient" id="Gradient_wv08x"]
 offsets = PackedFloat32Array(0)
@@ -8,6 +12,8 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tx4mg"]
 gradient = SubResource("Gradient_wv08x")
+
+[sub_resource type="Environment" id="Environment_dbrix"]
 
 [node name="The End" type="Control"]
 layout_mode = 3
@@ -29,11 +35,11 @@ layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 992.0
-offset_bottom = 480.0
-text = "The End!
+offset_bottom = 320.0
+text = "We did it! We have defensed the Castles!
 Thanks for playing!
 
-xolatgames, with Love! ;)"
+xolatgames, with love for my portfolio!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -44,5 +50,34 @@ offset_top = 512.0
 offset_right = 992.0
 offset_bottom = 576.0
 text = "Quit"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 288.0
+offset_right = 768.0
+offset_bottom = 480.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(512, 192)
+render_target_update_mode = 4
+
+[node name="Orc" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_7sgic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Bird" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_y7tck")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -2)
+script = ExtResource("4_g6knj")
+
+[node name="Slow" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_sgfqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+environment = SubResource("Environment_dbrix")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

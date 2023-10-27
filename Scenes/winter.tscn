@@ -18,10 +18,13 @@ agent_radius = 0.2
 
 [node name="Winter" type="Node3D"]
 script = ExtResource("1_c24l3")
+enemy_name = Array[int]([0, 1, 1, 1, 0, 3, 3, 3, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+enemy_health = Array[int]([0, 5, 5, 5, 0, 5, 5, 5, 0, 10, 10, 10, 0, 25, 25, 25, 0, 40, 40, 40])
 
 [node name="Hint" parent="." instance=ExtResource("2_7bjsw")]
 
 [node name="Slow" type="Label" parent="Hint"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 160.0
 offset_right = 672.0
@@ -30,6 +33,7 @@ text = "This tower will be slow down other enemies"
 autowrap_mode = 2
 
 [node name="Slow icon" parent="Hint" instance=ExtResource("3_ckuu5")]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 160.0
 offset_right = 128.0
@@ -60,7 +64,7 @@ offset_top = 512.0
 offset_right = 288.0
 offset_bottom = 576.0
 tower_name = "Cannon"
-price = 3
+price = 6
 
 [node name="Building button4" parent="Interface" instance=ExtResource("3_tnf8v")]
 offset_left = 320.0
@@ -68,7 +72,7 @@ offset_top = 512.0
 offset_right = 384.0
 offset_bottom = 576.0
 tower_name = "Bow"
-price = 3
+price = 6
 
 [node name="Building button5" parent="Interface" instance=ExtResource("3_tnf8v")]
 offset_left = 416.0
@@ -202,7 +206,7 @@ transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
 
 [node name="Spawning enemies" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Spawning enemies" to="." method="_on_spawning_enemies_timeout"]

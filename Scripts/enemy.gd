@@ -2,7 +2,8 @@ extends Area3D
 
 class_name Enemy
 
-var speed = 20
+@export var speed = 10
+var current_speed = 10
 var health = 0
 var max_health = 10
 @export var is_fly = false
@@ -29,7 +30,7 @@ func _physics_process(delta):
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
-	var next_safe_position = safe_velocity.normalized() / 1000 * speed
+	var next_safe_position = safe_velocity.normalized() / 1000 * current_speed
 	translate(next_safe_position)
 
 
@@ -40,7 +41,7 @@ func _on_area_entered(area):
 
 
 func _on_speeding_timeout():
-	speed = 20
+	current_speed = speed
 
 
 func _on_hiding_timeout():

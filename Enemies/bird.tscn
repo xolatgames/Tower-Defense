@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvmrpaylvjq0w"]
+[gd_scene load_steps=5 format=3 uid="uid://bvmrpaylvjq0w"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_07kop"]
 [ext_resource type="PackedScene" uid="uid://kifokonm2mi0" path="res://Models/Enemies/Bird.fbx" id="2_rio1c"]
+[ext_resource type="Script" path="res://Scripts/animate.gd" id="3_igmpa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7mvhy"]
 
@@ -11,6 +12,7 @@ is_fly = true
 
 [node name="Skin" parent="." instance=ExtResource("2_rio1c")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.175782)
+script = ExtResource("3_igmpa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0.00769764)

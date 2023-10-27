@@ -40,15 +40,16 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if !event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if i_can_build_here:
-				var tower_obj = load("res://Towers/"+tower_name+".tscn")
-				tower_obj = tower_obj.instantiate()
-				tower_obj.position = position
-				tower_obj.rotation_degrees.y = 180
-				get_tree().current_scene.add_child(tower_obj)
-				
 				var areas = get_overlapping_areas()
+				
 				for i in areas:
 					if i.is_in_group("place"):
+						var tower_obj = load("res://Towers/"+tower_name+".tscn")
+						tower_obj = tower_obj.instantiate()
+						tower_obj.position = i.global_position + Vector3(0, 2, 0)
+						tower_obj.rotation_degrees.y = 180
+						get_tree().current_scene.add_child(tower_obj)
+						
 						i.queue_free()
 				
 				Stats.gold -= price
