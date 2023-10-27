@@ -6,4 +6,4 @@ func _process(delta):
 	for i in enemies:
 		if i is Enemy:
 			if i.visible:
-				i.speed = 15
+				i.current_speed = i.speed/2

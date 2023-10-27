@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpivbxsduydfr"
 path.s3tc="res://.godot/imported/Visibility-708dd9f6060648c665694f4076198178_Eye.png-85711f41067f8fe5f8fd75a50d8b3b5d.s3tc.ctex"
+path.etc2="res://.godot/imported/Visibility-708dd9f6060648c665694f4076198178_Eye.png-85711f41067f8fe5f8fd75a50d8b3b5d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Models/Towers/Visibility-708dd9f6060648c665694f4076198178_Eye.png"
-dest_files=["res://.godot/imported/Visibility-708dd9f6060648c665694f4076198178_Eye.png-85711f41067f8fe5f8fd75a50d8b3b5d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Visibility-708dd9f6060648c665694f4076198178_Eye.png-85711f41067f8fe5f8fd75a50d8b3b5d.s3tc.ctex", "res://.godot/imported/Visibility-708dd9f6060648c665694f4076198178_Eye.png-85711f41067f8fe5f8fd75a50d8b3b5d.etc2.ctex"]
 
 [params]
 

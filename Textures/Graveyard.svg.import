@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7lw62pjqhyuv"
 path.s3tc="res://.godot/imported/Graveyard.svg-4a1e5e6975a07a408e4aa5dc71523c7d.s3tc.ctex"
+path.etc2="res://.godot/imported/Graveyard.svg-4a1e5e6975a07a408e4aa5dc71523c7d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Graveyard.svg"
-dest_files=["res://.godot/imported/Graveyard.svg-4a1e5e6975a07a408e4aa5dc71523c7d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Graveyard.svg-4a1e5e6975a07a408e4aa5dc71523c7d.s3tc.ctex", "res://.godot/imported/Graveyard.svg-4a1e5e6975a07a408e4aa5dc71523c7d.etc2.ctex"]
 
 [params]
 
