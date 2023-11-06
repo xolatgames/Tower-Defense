@@ -1,6 +1,9 @@
 # Tower-Defense
 
-The Tower Defense game where you can build towers agains enemies.
+Music by timbeek.com
+Sounds: https://kronbits.itch.io/freesfx
+
+The Tower Defense game where you can build some towers against the enemies.
 
 Just Drag&Drop the towers for defensing the Castles!
 
