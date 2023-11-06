@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://buikr6047y5h6"]
+[gd_scene load_steps=8 format=3 uid="uid://buikr6047y5h6"]
 
 [ext_resource type="Script" path="res://Scripts/Towers/visibility.gd" id="1_feucb"]
 [ext_resource type="PackedScene" uid="uid://ditgq7i6dpsee" path="res://Models/Towers/Visibility.fbx" id="1_ji0hp"]
 [ext_resource type="Script" path="res://Scripts/animate.gd" id="3_000i3"]
+[ext_resource type="AudioStream" uid="uid://bsvprmei6ecvf" path="res://Sounds/Build.wav" id="4_nop4a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
 transparency = 1
@@ -27,3 +28,8 @@ mesh = SubResource("SphereMesh_imuox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_fkohu")
+
+[node name="Build" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_nop4a")
+volume_db = 40.0
+autoplay = true

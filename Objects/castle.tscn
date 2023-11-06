@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccnuei60peepa"]
+[gd_scene load_steps=4 format=3 uid="uid://ccnuei60peepa"]
 
 [ext_resource type="PackedScene" uid="uid://l55boefgixrr" path="res://Models/Castle.fbx" id="1_fpf4k"]
+[ext_resource type="AudioStream" uid="uid://c24slr86ilny0" path="res://Sounds/Lose.wav" id="2_51lc6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvsxr"]
 
@@ -11,3 +12,6 @@
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_hvsxr")
+
+[node name="Lose" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_51lc6")

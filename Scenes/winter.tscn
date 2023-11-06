@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl24qrync82kg"]
+[gd_scene load_steps=13 format=3 uid="uid://dl24qrync82kg"]
 
 [ext_resource type="Script" path="res://Scripts/level_controller.gd" id="1_c24l3"]
 [ext_resource type="PackedScene" uid="uid://vvxr2wxn75xv" path="res://Objects/Interfaces/interface.tscn" id="2_4r873"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bvbogn4gq2jcl" path="res://Objects/building_button.tscn" id="3_tnf8v"]
 [ext_resource type="PackedScene" uid="uid://dtv7fvwmx15sm" path="res://Objects/Interfaces/win.tscn" id="4_cbp33"]
 [ext_resource type="MeshLibrary" uid="uid://cac2ibdoao68j" path="res://meshes.tres" id="5_wxa5m"]
-[ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Entities/build_place.tscn" id="6_u6pue"]
+[ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Objects/build_place.tscn" id="6_u6pue"]
 [ext_resource type="PackedScene" uid="uid://ccnuei60peepa" path="res://Objects/castle.tscn" id="7_1tnbw"]
+[ext_resource type="AudioStream" uid="uid://0al6qe4irubw" path="res://Music/Purple Black Loop.ogg" id="11_e4drd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_36qxb"]
 vertices = PackedVector3Array(0.25, 2.5, 0.25, 0.25, 2.5, 0.75, 2.25, 2.5, 1, 2.75, 2.5, 0.25, 4.75, 2.5, 4.75, 4.75, 2.5, -1.75, 4.25, 2.5, -1, 4, 2.5, 4.25, 2.75, 2.5, 2.75, 2.75, 2.5, 0.25, 2.25, 2.5, 1, 2, 2.5, 2.25, -3.75, 2.5, 4.75, -3, 2.5, 4.25, -3.25, 2.5, -3, -3.75, 2.5, -3.75, -1.75, 2.5, 2.75, 2.75, 2.5, 2.75, 2, 2.5, 2.25, -1.25, 2.5, 2, -3.75, 2.5, 4.75, 4.75, 2.5, 4.75, 4, 2.5, 4.25, -3, 2.5, 4.25, -1.75, 2.5, -1.75, -1.75, 2.5, 2.75, -1.25, 2.5, 2, -1, 2.5, -1.25, -3.25, 2.5, -3, 4.75, 2.5, -3, 4.75, 2.5, -3.75, -3.75, 2.5, -3.75, 4.75, 2.5, -1.75, -1.75, 2.5, -1.75, -1, 2.5, -1.25, 4.25, 2.5, -1, -0.5, 1.5, 1.75, 1.75, 1.5, 1.75, -0.25, 1.5, 1.25, -2, 1.5, -2.25, 4.75, 1.5, -2.25, -2.5, 1.5, -2.5, -0.5, 1.5, -0.5, -0.5, 1.5, 1.75, -0.25, 1.5, 1.25, 0, 1.5, -0.25, 3.75, 1.5, 3.75, 3.5, 1.5, 3, 3, 1.5, 3.5, 3.75, 1.5, -0.5, -0.5, 1.5, -0.5, 0, 1.5, -0.25, 3.5, 1.5, 0, -2.5, 1.5, -2.5, -2.5, 1.5, 3.75, -2.25, 1.5, 3.25, -2, 1.5, -2.25, 3.75, 1.5, -0.5, 3.5, 1.5, 0, 3.5, 1.5, 3, 3.75, 1.5, 3.75, -2.5, 1.5, 3.75, 3.75, 1.5, 3.75, 3, 1.5, 3.5, -2.25, 1.5, 3.25)
@@ -207,5 +208,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 1.5)
 [node name="Spawning enemies" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_e4drd")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="timeout" from="Spawning enemies" to="." method="_on_spawning_enemies_timeout"]

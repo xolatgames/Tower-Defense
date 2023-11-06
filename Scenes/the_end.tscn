@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://craai4w6c6n23"]
+[gd_scene load_steps=10 format=3 uid="uid://craai4w6c6n23"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/the_end.gd" id="1_a4d13"]
 [ext_resource type="PackedScene" uid="uid://diyiaua8v7p6i" path="res://Models/Enemies/Orc.fbx" id="2_7sgic"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://kifokonm2mi0" path="res://Models/Enemies/Bird.fbx" id="3_y7tck"]
-[ext_resource type="Script" path="res://Scripts/animate.gd" id="4_g6knj"]
-[ext_resource type="PackedScene" uid="uid://ditgq7i6dpsee" path="res://Models/Towers/Slow.fbx" id="4_sgfqd"]
-=======
 [ext_resource type="PackedScene" uid="uid://bv23ygkt5iig0" path="res://Models/Towers/Slow.fbx" id="3_qwnw1"]
 [ext_resource type="PackedScene" uid="uid://kifokonm2mi0" path="res://Models/Enemies/Bird.fbx" id="3_y7tck"]
 [ext_resource type="Script" path="res://Scripts/animate.gd" id="4_g6knj"]
->>>>>>> Stashed changes
+[ext_resource type="AudioStream" uid="uid://u633enrc58ow" path="res://Music/New Road Loop.ogg" id="6_mp3dr"]
 
 [sub_resource type="Gradient" id="Gradient_wv08x"]
 offsets = PackedFloat32Array(0)
@@ -45,7 +40,7 @@ offset_bottom = 320.0
 text = "We did it! We have defensed the Castles!
 Thanks for playing!
 
-xolatgames, with love for my portfolio!"
+xolatgames, for my portfolio!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -73,26 +68,21 @@ render_target_update_mode = 4
 [node name="Orc" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_7sgic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
 
-<<<<<<< Updated upstream
-=======
 [node name="Slow" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_qwnw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
->>>>>>> Stashed changes
 [node name="Bird" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_y7tck")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -2)
 script = ExtResource("4_g6knj")
 
-<<<<<<< Updated upstream
-[node name="Slow" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_sgfqd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-
-=======
->>>>>>> Stashed changes
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 environment = SubResource("Environment_dbrix")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mp3dr")
+autoplay = true
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

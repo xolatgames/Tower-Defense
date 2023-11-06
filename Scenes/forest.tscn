@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1u5ssgrwch8o"]
+[gd_scene load_steps=13 format=3 uid="uid://d1u5ssgrwch8o"]
 
 [ext_resource type="PackedScene" uid="uid://vvxr2wxn75xv" path="res://Objects/Interfaces/interface.tscn" id="1_6c6fn"]
 [ext_resource type="Script" path="res://Scripts/level_controller.gd" id="1_pyeqv"]
@@ -6,11 +6,12 @@
 [ext_resource type="MeshLibrary" uid="uid://cac2ibdoao68j" path="res://meshes.tres" id="2_1u0g2"]
 [ext_resource type="PackedScene" uid="uid://bvbogn4gq2jcl" path="res://Objects/building_button.tscn" id="2_iupqe"]
 [ext_resource type="PackedScene" uid="uid://fxm2qkxc1o50" path="res://Objects/tower_icon.tscn" id="3_dmkuh"]
-[ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Entities/build_place.tscn" id="3_swph4"]
+[ext_resource type="PackedScene" uid="uid://ravlwlh3qk12" path="res://Objects/build_place.tscn" id="3_swph4"]
 [ext_resource type="PackedScene" uid="uid://h2ybmnfnbk4r" path="res://Objects/Interfaces/lose.tscn" id="4_m4ilo"]
 [ext_resource type="PackedScene" uid="uid://dtv7fvwmx15sm" path="res://Objects/Interfaces/win.tscn" id="5_iqjvi"]
 [ext_resource type="PackedScene" uid="uid://ccnuei60peepa" path="res://Objects/castle.tscn" id="6_8r3bv"]
 [ext_resource type="NavigationMesh" uid="uid://bvxyk401tp68e" path="res://navmesh.tres" id="6_cgb0t"]
+[ext_resource type="AudioStream" uid="uid://0al6qe4irubw" path="res://Music/Purple Black Loop.ogg" id="12_sfu2c"]
 
 [node name="Forest" type="Node3D"]
 script = ExtResource("1_pyeqv")
@@ -162,5 +163,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 4.5)
 [node name="Spawning enemies" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_sfu2c")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="timeout" from="Spawning enemies" to="." method="_on_spawning_enemies_timeout"]

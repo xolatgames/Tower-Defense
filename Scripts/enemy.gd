@@ -36,6 +36,7 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 
 func _on_area_entered(area):
 	if area.is_in_group("castle"):
+		area.get_node("Lose").play()
 		Stats.lives -= 1
 		queue_free()
 

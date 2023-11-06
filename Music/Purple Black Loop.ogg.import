@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0al6qe4irubw"
+path="res://.godot/imported/Purple Black Loop.ogg-32fb0e6bc1f41786494f230ca6f079be.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Purple Black Loop.ogg"
+dest_files=["res://.godot/imported/Purple Black Loop.ogg-32fb0e6bc1f41786494f230ca6f079be.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

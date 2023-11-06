@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp5fs4gtpjcmq"]
+[gd_scene load_steps=7 format=3 uid="uid://bp5fs4gtpjcmq"]
 
 [ext_resource type="PackedScene" uid="uid://c87wj0a5v8pdm" path="res://Models/Towers/Simple.fbx" id="1_4m5eo"]
 [ext_resource type="Script" path="res://Scripts/Towers/tower.gd" id="1_f23sr"]
+[ext_resource type="AudioStream" uid="uid://bsvprmei6ecvf" path="res://Sounds/Build.wav" id="3_midq0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
 transparency = 1
@@ -29,5 +30,10 @@ shape = SubResource("SphereShape3D_fkohu")
 [node name="Damage" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Build" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_midq0")
+volume_db = 40.0
+autoplay = true
 
 [connection signal="timeout" from="Damage" to="." method="_on_damage_timeout"]

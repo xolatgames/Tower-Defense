@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c33p4sly4670g"]
+[gd_scene load_steps=5 format=3 uid="uid://c33p4sly4670g"]
 
 [ext_resource type="PackedScene" uid="uid://ceg36lhp7xeho" path="res://Models/Towers/House.fbx" id="1_2h2fe"]
 [ext_resource type="Script" path="res://Scripts/Towers/House.gd" id="1_cdd52"]
+[ext_resource type="AudioStream" uid="uid://bsvprmei6ecvf" path="res://Sounds/Build.wav" id="3_e8j11"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bva71"]
 radius = 1.0
@@ -18,5 +19,10 @@ shape = SubResource("SphereShape3D_bva71")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="Build" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_e8j11")
+volume_db = 40.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

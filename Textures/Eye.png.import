@@ -4,25 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vk6mnjrrhabh"
 path.s3tc="res://.godot/imported/Eye.png-412ba11fa2fc7f3cd1328e866165d0f5.s3tc.ctex"
-<<<<<<< Updated upstream
-metadata={
-"imported_formats": ["s3tc_bptc"],
-=======
 path.etc2="res://.godot/imported/Eye.png-412ba11fa2fc7f3cd1328e866165d0f5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
->>>>>>> Stashed changes
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Eye.png"
-<<<<<<< Updated upstream
-dest_files=["res://.godot/imported/Eye.png-412ba11fa2fc7f3cd1328e866165d0f5.s3tc.ctex"]
-=======
 dest_files=["res://.godot/imported/Eye.png-412ba11fa2fc7f3cd1328e866165d0f5.s3tc.ctex", "res://.godot/imported/Eye.png-412ba11fa2fc7f3cd1328e866165d0f5.etc2.ctex"]
->>>>>>> Stashed changes
 
 [params]
 

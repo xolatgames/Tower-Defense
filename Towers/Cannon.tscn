@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8nje7dh5g6mu"]
+[gd_scene load_steps=7 format=3 uid="uid://b8nje7dh5g6mu"]
 
 [ext_resource type="PackedScene" uid="uid://b3o3ttve753sn" path="res://Models/Towers/Cannon.fbx" id="1_8w53y"]
 [ext_resource type="Script" path="res://Scripts/Towers/tower.gd" id="1_uf2eg"]
+[ext_resource type="AudioStream" uid="uid://bsvprmei6ecvf" path="res://Sounds/Build.wav" id="3_7n7p2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgfuf"]
 transparency = 1
@@ -31,5 +32,10 @@ shape = SubResource("SphereShape3D_fkohu")
 [node name="Damage" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Build" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_7n7p2")
+volume_db = 40.0
+autoplay = true
 
 [connection signal="timeout" from="Damage" to="." method="_on_damage_timeout"]
